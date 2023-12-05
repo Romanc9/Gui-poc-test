@@ -15,7 +15,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 
-public class GuiDemo extends Application {      //创建一个GuiDemo类，GuiDemo继承Application类
+public class GuiDemo extends Application {      
     String result = null;
     Date d = new Date();
     //DateFormat time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -23,19 +23,16 @@ public class GuiDemo extends Application {      //创建一个GuiDemo类，GuiDe
     String payload =null;
 
     public void start(Stage GuiDemo) {
-        //设置标题
         GuiDemo.setTitle("GUI-poc-test  by:rc9");
         GuiDemo.setMaxWidth(700);
         GuiDemo.setMaxHeight(500);
 
-        //添加URL输入标签
         Label l = new Label("请输入URL");
         l.setLayoutX(10);
         l.setLayoutY(15);
         l.setPrefWidth(70);
         l.setPrefHeight(20);
 
-        //添加URL文本框
         TextArea textArea = new TextArea();
         textArea.setText("请在右侧下拉栏选择poc");
         textArea.setLayoutX(80);
@@ -43,7 +40,6 @@ public class GuiDemo extends Application {      //创建一个GuiDemo类，GuiDe
         textArea.setPrefWidth(250);
         textArea.setPrefHeight(10);
 
-        //添加下拉按钮，内容为漏洞字符串数组
         String strings[] = {"cs RCE", "weblogic RCE", "minio 信息泄漏"};
         ChoiceBox choiceBox = new ChoiceBox(FXCollections.observableArrayList(strings));
         choiceBox.setLayoutX(360);
@@ -51,14 +47,12 @@ public class GuiDemo extends Application {      //创建一个GuiDemo类，GuiDe
         choiceBox.setPrefHeight(20);
         choiceBox.setPrefWidth(70);
 
-        //添加检测按钮
         Button button = new Button("检测");
         button.setLayoutX(450);
         button.setLayoutY(15);
         button.setPrefWidth(70);
         button.setPrefHeight(20);
 
-        //添加回显文本框
         TextArea textArea1 = new TextArea();
         textArea1.setLayoutX(10);
         textArea1.setLayoutY(130);
